@@ -11,7 +11,7 @@ import SwiftUI
 struct ShopyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            WelcomeView()
         }
     }
 }
