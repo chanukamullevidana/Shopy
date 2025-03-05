@@ -76,7 +76,7 @@ struct SignInView: View {
                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 60,maxHeight: 60)
                     .background(Color(hex: "5383EC"))
                     .cornerRadius(20)
-                    .padding(.bottom, 8)
+                    .padding(.bottom, 7)
                     
                     Button{
                         
