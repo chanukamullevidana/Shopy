@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		4DE852032D7839460017A4E7 /* CountryPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 4DE852022D7839460017A4E7 /* CountryPicker */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		4DE0D91B2D75A9C100461BC1 /* Shopy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shopy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DE852032D7839460017A4E7 /* CountryPicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,7 @@
 			);
 			name = Shopy;
 			packageProductDependencies = (
+				4DE852022D7839460017A4E7 /* CountryPicker */,
 			);
 			productName = Shopy;
 			productReference = 4DE0D91B2D75A9C100461BC1 /* Shopy.app */;
@@ -107,6 +113,9 @@
 			);
 			mainGroup = 4DE0D9122D75A9C100461BC1;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				4DE852012D7839460017A4E7 /* XCRemoteSwiftPackageReference "CountryPicker" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 4DE0D91C2D75A9C100461BC1 /* Products */;
 			projectDirPath = "";
@@ -351,6 +360,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4DE852012D7839460017A4E7 /* XCRemoteSwiftPackageReference "CountryPicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mobven/CountryPicker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4DE852022D7839460017A4E7 /* CountryPicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4DE852012D7839460017A4E7 /* XCRemoteSwiftPackageReference "CountryPicker" */;
+			productName = CountryPicker;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4DE0D9132D75A9C100461BC1 /* Project object */;
 }
