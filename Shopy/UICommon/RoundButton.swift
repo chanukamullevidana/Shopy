@@ -15,7 +15,7 @@ struct RoundButton: View {
         Button{
             didTap?()
         } label: {
-            Text("Get Started")
+            Text(title)
                 .font(.customfont(.semibold, fontSize: 18))
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
