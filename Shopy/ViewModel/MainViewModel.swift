@@ -18,11 +18,11 @@ class MainViewModel: ObservableObject {
     @Published var errorMessage = ""
     
     init(){
-        #if DEBUG
-        txtUsername = ""
-        txtEmail = "test@gmail.com"
-        txtPassword = "123456"
-        #endif
+//        #if DEBUG
+//        txtUsername = "user4"
+//        txtEmail = "test6@gmail.com"
+//        txtPassword = "123456"
+//        #endif
     }
     
     //MARK: ServiceCall
@@ -43,6 +43,9 @@ class MainViewModel: ObservableObject {
         ServiceCall.post(parameter: ["email": txtEmail, "password": txtPassword, "dervice_token": ""], path: Globs.SV_LOGIN) { responseObj in
             if let response = responseObj as? NSDictionary{
                 if response.value(forKey: KKey.status) as? String ?? "" == "1"{
+                    self.txtEmail = ""
+                    self.txtPassword = ""
+                    self.isShowPssword = false
                     self.errorMessage = response.value(forKey: KKey.message) as? String ?? "Success"
                     self.showError = true
                 }else{
@@ -58,6 +61,12 @@ class MainViewModel: ObservableObject {
     
     func serviceCallSignUp(){
         
+        if(!txtUsername.isValidEmail){
+            self.errorMessage = "please enter valid username"
+            self.showError = true
+            return
+        }
+        
         if(!txtEmail.isValidEmail){
             self.errorMessage = "please enter valid email address"
             self.showError = true
@@ -70,9 +79,12 @@ class MainViewModel: ObservableObject {
             return
         }
         
-        ServiceCall.post(parameter: ["email": txtEmail, "password": txtPassword, "dervice_token": ""], path: Globs.SV_LOGIN) { responseObj in
+        ServiceCall.post(parameter: ["username": txtUsername,"email": txtEmail, "password": txtPassword, "dervice_token": ""], path: Globs.SV_SIGN_UP) { responseObj in
             if let response = responseObj as? NSDictionary{
                 if response.value(forKey: KKey.status) as? String ?? "" == "1"{
+                    self.txtEmail = ""
+                    self.txtPassword = ""
+                    self.isShowPssword = false
                     self.errorMessage = response.value(forKey: KKey.message) as? String ?? "Success"
                     self.showError = true
                 }else{
